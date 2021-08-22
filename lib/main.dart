@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'custom_bottomnavbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -27,6 +28,22 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
 
+  bool isDelayed = false;
+
+  @override
+  void initState()  {
+    delay();
+    super.initState();
+  }
+
+  void delay() async{
+    await Future.delayed(Duration(seconds: 5));
+    setState(() {
+      isDelayed = true;
+    });
+    print('printing after 3 seconds');
+  }
+
   @override
   Widget build(BuildContext context) {
 
@@ -37,7 +54,7 @@ class _MyHomePageState extends State<MyHomePage> {
           children: [
             Icon(FontAwesomeIcons.youtube, color: Colors.red,),
             SizedBox(width: 5.0,),
-            Text('Youtube', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22.0, fontFamily: 'Open Sans'),)
+            Text('Youtube', style: TextStyle(fontSize: 22.0, fontFamily: 'Open Serif'),)
           ],
         ),
         actions: [
@@ -47,17 +64,188 @@ class _MyHomePageState extends State<MyHomePage> {
           IconButton(onPressed: () {print('account icon pressed');}, icon: Icon(Icons.person)),
         ],
       ),
-      body: Center(
+      body: SingleChildScrollView(
         child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
+            SizedBox(
+              height: 10.0,
             ),
-            Text(
-              'counter',
-              style: Theme.of(context).textTheme.headline4,
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage('assets/images/image.jpg'), fit: BoxFit.fill)
+                  ),
+                  height: 250.0,
+                  width: MediaQuery.of(context).size.width,
+                ),
+
+                SizedBox(
+                  height: 10.0,
+                ),
+
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 6.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(maxRadius: 20.0, backgroundImage: AssetImage('assets/images/youtube.png'), backgroundColor: Colors.transparent,),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Race Highlights | 2021 Bahrain Grand Prix', overflow: TextOverflow.fade, style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),),
+                          Text('FORMULA 1 | 79lakh views | 4 months ago '),
+
+                        ],
+                      ),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.more_vert), padding: EdgeInsets.zero,
+                        constraints: BoxConstraints(),)
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+              ],
             ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage('assets/images/youtube.png'), fit: BoxFit.fill)
+                  ),
+                  height: 250.0,
+                  width: MediaQuery.of(context).size.width,
+                ),
+
+                SizedBox(
+                  height: 10.0,
+                ),
+
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 6.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(maxRadius: 20.0, backgroundImage: AssetImage('assets/images/youtube.png'), backgroundColor: Colors.transparent,),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Race Highlights | 2021 Bahrain Grand Prix', overflow: TextOverflow.fade, style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),),
+                          Text('FORMULA 1 | 79lakh views | 4 months ago '),
+
+                        ],
+                      ),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.more_vert), padding: EdgeInsets.zero,
+                        constraints: BoxConstraints(),)
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage('assets/images/youtube.png'), fit: BoxFit.fill)
+                  ),
+                  height: 250.0,
+                  width: MediaQuery.of(context).size.width,
+                ),
+
+                SizedBox(
+                  height: 10.0,
+                ),
+
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 6.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(maxRadius: 20.0, backgroundImage: AssetImage('assets/images/youtube.png'), backgroundColor: Colors.transparent,),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Race Highlights | 2021 Bahrain Grand Prix', overflow: TextOverflow.fade, style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),),
+                          Text('FORMULA 1 | 79lakh views | 4 months ago '),
+
+                        ],
+                      ),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.more_vert), padding: EdgeInsets.zero,
+                        constraints: BoxConstraints(),)
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+
+                Container(
+                  decoration: BoxDecoration(
+                      image: DecorationImage(image: AssetImage('assets/images/youtube.png'), fit: BoxFit.fill)
+                  ),
+                  height: 250.0,
+                  width: MediaQuery.of(context).size.width,
+                ),
+
+                SizedBox(
+                  height: 10.0,
+                ),
+
+                Container(
+                  padding: EdgeInsets.symmetric(horizontal: 6.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      CircleAvatar(maxRadius: 20.0, backgroundImage: AssetImage('assets/images/youtube.png'), backgroundColor: Colors.transparent,),
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Race Highlights | 2021 Bahrain Grand Prix', overflow: TextOverflow.fade, style: TextStyle(fontSize: 16.0, fontWeight: FontWeight.bold, color: Colors.white),),
+                          Text('FORMULA 1 | 79lakh views | 4 months ago '),
+
+                        ],
+                      ),
+                      IconButton(onPressed: (){}, icon: Icon(Icons.more_vert), padding: EdgeInsets.zero,
+                        constraints: BoxConstraints(),)
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: 10.0,
+                ),
+              ],
+            ),
+
+
+
+
+            //isDelayed ? Text('message after 5 seconds') : CircularProgressIndicator(),
+
           ],
         ),
       ),
@@ -69,51 +257,4 @@ class _MyHomePageState extends State<MyHomePage> {
 
 
 
-
-
-
-
-
-
-
-
-class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({Key? key}) : super(key: key);
-
-  @override
-  _CustomBottomNavigationBarState createState() => _CustomBottomNavigationBarState();
-}
-
-class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
-  int selectedIndex = 0;
-  Color selectedItemColor = Colors.white;
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: BoxDecoration(
-          boxShadow: [
-            BoxShadow(color: Colors.black,blurRadius: 5.0)
-          ]
-      ),
-      child: BottomNavigationBar(
-        elevation: 100.0,
-        currentIndex: selectedIndex,
-        showUnselectedLabels: true,
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.play_arrow), label: 'Shorts'),
-          BottomNavigationBarItem(icon: Icon(Icons.add_circle_outline, size: 30.0,), label: 'Add'),
-          BottomNavigationBarItem(icon: Icon(Icons.subscriptions), label: 'Subscriptions'),
-          BottomNavigationBarItem(icon: Icon(Icons.video_library_outlined,), label: 'Library')
-        ],
-        onTap: (index) {setState(() {
-          selectedIndex = index;
-          selectedItemColor = Colors.white;
-        });},
-        unselectedItemColor: Colors.white54,
-        selectedItemColor: selectedItemColor,
-      ),
-    );
-  }
-}
 
