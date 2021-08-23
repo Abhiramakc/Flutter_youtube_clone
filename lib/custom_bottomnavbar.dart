@@ -10,6 +10,8 @@ class CustomBottomNavigationBar extends StatefulWidget {
 class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   int selectedIndex = 0;
   Color selectedItemColor = Colors.white;
+
+
   @override
   Widget build(BuildContext context) {
     return Container(
