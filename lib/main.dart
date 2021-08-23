@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'appbar_icon.dart';
 import 'custom_bottomnavbar.dart';
+import 'dart:math';
 
 void main() {
   runApp(MyApp());
@@ -36,11 +37,12 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   void delay() async {
-    await Future.delayed(Duration(seconds: 5));
+    int randomNum = Random().nextInt(5);
+    await Future.delayed(Duration(seconds: (randomNum+1)));
     setState(() {
       isDelayed = false;
     });
-    print('printing after 3 seconds');
+    print('printing after ${randomNum+1} seconds');
   }
 
   @override
